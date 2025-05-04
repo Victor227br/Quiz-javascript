@@ -1,3 +1,43 @@
-.body{
-    
+body{
+    background-color: #2b2d42;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:2vw;
+    background-color: #484c69;
+    width: 55vw;
+    height: 25vw;
+    border: 3px solid #9932cc;
+}
+
+.styleQuestions{
+    background-color: beige;
+    width: 50vw;
+    height: 20vw;
+}
+
+.divH2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31vw;
+    height: 5vw;
+    margin-top: 8vw;
+    background-color: #9932cc;
+    border-radius: 5px;
+}
+
+.quizH2{
+    color: white;
+    font: bold;
+    font-size: 4vw;
+    margin: 0;
 }
