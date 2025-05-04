@@ -18,10 +18,12 @@ body{
     border: 3px solid #9932cc;
 }
 
-.styleQuestions{
+.styleContainerQuestions{
     background-color: beige;
     width: 50vw;
     height: 20vw;
+    display: flex;
+    flex-direction: column;
 }
 
 .divH2{
