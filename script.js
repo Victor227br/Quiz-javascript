@@ -16,5 +16,28 @@ divH2Quiz.appendChild(quizH2)
 }
 
 function getQuestions(){
-
+    questionsAndAnswers.forEach(item => {
+        const questionH2 = document.createElement("h2");
+        questionH2.textContent = item.question;
+        styleContainerQuestions.appendChild(questionH2);
+});
 }
+
+const questionsAndAnswers = [
+{
+question: "Melhor time do Brasil?",
+altenativa: ["Corinthians", "Sport Club Corinthians"],
+AnswersCorrect: 1
+},
+
+{
+question: "melhor time da série b",
+altenativa: ["Vasco da gama", "Vasco"],
+AnswersCorrect: 0
+},
+{
+question: "A or B",
+altenativa: ["A", "B"],
+AnswersCorrect: 0
+}
+]
