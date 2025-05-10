@@ -1,14 +1,14 @@
 window.onload = function myPage() {
-const container = document.createElement('div') 
+let container = document.createElement('div') 
 container.className = "container"
-const styleContainerQuestions = document.createElement('div')
+let styleContainerQuestions = document.createElement('div')
 styleContainerQuestions.className = "styleContainerQuestions"
-const divH2Quiz = document.createElement('div')
+let divH2Quiz = document.createElement('div')
 divH2Quiz.className = "divH2"
-const quizH2 = document.createElement('h2');
+let quizH2 = document.createElement('h2');
 quizH2.innerHTML = "Quiz Javascript";
 quizH2.className = "quizH2";
-const startQuizButton = document.createElement('button')
+let startQuizButton = document.createElement('button')
 startQuizButton.className = "btnStart"
 startQuizButton.innerHTML = "Start Quiz"
 
@@ -21,7 +21,7 @@ styleContainerQuestions.appendChild(startQuizButton)
 
 function renderQuiz(questions) {
     questions.forEach(item => {
-    const questionH2 = document.createElement('h2');
+    let questionH2 = document.createElement('h2');
     questionH2.textContent = item.question;
     styleContainerQuestions.appendChild(questionH2);
 } )
@@ -34,7 +34,7 @@ startQuizButton.addEventListener('click', function() {
 } );
 
 
-const questionsAndAnswers = [
+let questionsAndAnswers = [
 {
 question: "Melhor time do Brasil?",
 altenativa: ["Corinthians", "Sport Club Corinthians"],
