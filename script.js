@@ -19,20 +19,6 @@ divH2Quiz.appendChild(quizH2)
 styleContainerQuestions.appendChild(startQuizButton)
 }
 
-function renderQuiz(questions) {
-    questions.forEach(item => {
-    let questionH2 = document.createElement('h2');
-    questionH2.textContent = item.question;
-    styleContainerQuestions.appendChild(questionH2);
-} )
-}
-
-renderQuiz(questionsAndAnswers)
-
-startQuizButton.addEventListener('click', function() {
-    renderQuiz(questionsAndAnswers);
-} );
-
 
 let questionsAndAnswers = [
 {
@@ -52,3 +38,18 @@ altenativa: ["A", "B"],
 AnswersCorrect: 0
 }
 ]
+
+function renderQuiz(questions) {
+    questions.forEach(item => {
+    let questionH2 = document.createElement('h2');
+    questionH2.textContent = item.question;
+    styleContainerQuestions.appendChild(questionH2);
+} )
+}
+
+renderQuiz(questionsAndAnswers)
+
+startQuizButton.addEventListener('click', function() {
+    this.remove();
+    renderQuiz(questionsAndAnswers);
+} );
