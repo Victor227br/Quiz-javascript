@@ -1,11 +1,12 @@
+
 window.onload = function myPage() {
-let container = document.createElement('div') 
+const container = document.createElement('div') 
 container.className = "container"
 let styleContainerQuestions = document.createElement('div')
 styleContainerQuestions.className = "styleContainerQuestions"
-let divH2Quiz = document.createElement('div')
+const divH2Quiz = document.createElement('div')
 divH2Quiz.className = "divH2"
-let quizH2 = document.createElement('h2');
+const quizH2 = document.createElement('h2');
 quizH2.innerHTML = "Quiz Javascript";
 quizH2.className = "quizH2";
 let startQuizButton = document.createElement('button')
@@ -17,10 +18,16 @@ document.body.appendChild(container);
 container.appendChild(styleContainerQuestions)
 divH2Quiz.appendChild(quizH2)
 styleContainerQuestions.appendChild(startQuizButton)
+
+startQuizButton.addEventListener('click', function() {
+    renderQuiz(questionsAndAnswers, styleContainerQuestions);
+    this.remove();
+});
+renderQuiz(questionsAndAnswers, styleContainerQuestions)
+
 }
 
-
-let questionsAndAnswers = [
+const questionsAndAnswers = [
 {
 question: "Melhor time do Brasil?",
 altenativa: ["Corinthians", "Sport Club Corinthians"],
@@ -39,17 +46,12 @@ AnswersCorrect: 0
 }
 ]
 
-function renderQuiz(questions) {
+function renderQuiz(questions, container) {
     questions.forEach(item => {
     let questionH2 = document.createElement('h2');
     questionH2.textContent = item.question;
-    styleContainerQuestions.appendChild(questionH2);
+    container.appendChild(questionH2);
 } )
 }
 
-renderQuiz(questionsAndAnswers)
-
-startQuizButton.addEventListener('click', function() {
-    this.remove();
-    renderQuiz(questionsAndAnswers);
-} );
+// passar para próxima pergunta e tirar a anterior
