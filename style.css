@@ -9,7 +9,8 @@ body{
 
 .container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: column-reverse;
     align-items: center;
     margin-top:2vw;
     background-color: #484c69;
@@ -19,11 +20,10 @@ body{
 }
 
 .styleContainerQuestions{
-    background-color: beige;
-    width: 50vw;
-    height: 20vw;
+    width: 52vw;
+    height: 24vw;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
 }
@@ -54,3 +54,17 @@ body{
     border: 0000;
     color: white;
 }
+
+.divNextBtn{
+    justify-content: flex-end;
+}
+
+.nextButton{
+    background-color:#9932cc;
+    width: 8vw;
+    height: 25px;
+    border: 0000;
+    border-radius: 5;
+
+}
+

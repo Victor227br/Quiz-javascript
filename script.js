@@ -12,18 +12,26 @@ quizH2.className = "quizH2";
 let startQuizButton = document.createElement('button')
 startQuizButton.className = "btnStart"
 startQuizButton.innerHTML = "Start Quiz"
+let nextButton = document.createElement('button')
+nextButton.className = "nextButton"
+nextButton.innerHTML = "Next"
+nextButton.style.display = "none"
+let divNextBtn = document.createElement('div')
+divNextBtn.className = "divNextBtn"
+let QuestionPosition = 0
 
 document.body.appendChild(divH2Quiz)
 document.body.appendChild(container);
-container.appendChild(styleContainerQuestions)
 divH2Quiz.appendChild(quizH2)
-styleContainerQuestions.appendChild(startQuizButton)
+divNextBtn.appendChild(nextButton)
+container.appendChild(divNextBtn)
+container.appendChild(startQuizButton)
 
 startQuizButton.addEventListener('click', function() {
-    renderQuiz(questionsAndAnswers, styleContainerQuestions);
+    renderQuiz(questionsAndAnswers, container);
+    nextButton.style.display = "flex"
     this.remove();
 });
-renderQuiz(questionsAndAnswers, styleContainerQuestions)
 
 }
 
@@ -34,17 +42,23 @@ altenativa: ["Corinthians", "Sport Club Corinthians"],
 AnswersCorrect: 1
 },
 
-{
-question: "melhor   time da série b",
-altenativa: ["Vasco da gama", "Vasco"],
-AnswersCorrect: 0
-},
-{
-question: "A or B",
-altenativa: ["A", "B"],
-AnswersCorrect: 0
-}
+// {
+// question: "melhor   time da série b",
+// altenativa: ["Vasco da gama", "Vasco"],
+// AnswersCorrect: 0
+// },
+// {
+// question: "A or B",
+// altenativa: ["A", "B"],
+// AnswersCorrect: 0
+// }
 ]
+
+// startButton.addEventListener('click', function() {
+//     this.remove();
+//     nextButton.style.display = "block";
+//     showQuestion();
+// });
 
 function renderQuiz(questions, container) {
     questions.forEach(item => {
@@ -55,3 +69,4 @@ function renderQuiz(questions, container) {
 }
 
 // passar para próxima pergunta e tirar a anterior
+
