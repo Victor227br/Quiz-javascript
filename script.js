@@ -20,6 +20,7 @@ divNextBtn.className = "divNextBtn"
 divNextBtn.style.display = "none"
 
 let QuestionPosition = 0
+let score = 0
 
 document.body.appendChild(divH2Quiz)
 document.body.appendChild(container);
