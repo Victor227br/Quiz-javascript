@@ -31,39 +31,62 @@ styleContainerQuestions.appendChild(startQuizButton)
 container.appendChild(styleContainerQuestions)
 
 function renderQuiz(position, container) {
-    container.innerHTML = '';
-    const questionElement = document.createElement('h2');
-    questionElement.textContent = questionsAndAnswers[position].question;
-    container.appendChild(questionElement);
-    questionElement.className ="questionH2"
+container.innerHTML = '';
+const questionElement = document.createElement('h2');
+questionElement.textContent = questionsAndAnswers[position].question;
+container.appendChild(questionElement);
+questionElement.className ="questionH2"
+
+const alternativesContainer = document.createElement('div');
+alternativesContainer.className = "alternatives-container";
+questionsAndAnswers[position].alternativa.forEach((alternative) => {
+const alternativeDiv = document.createElement('div');
+alternativeDiv.className = "alternative";
+    
+const checkbox = document.createElement('input');
+checkbox.type = "radio"; 
+checkbox.name = "alternative"; 
+const label = document.createElement('label');
+label.textContent = alternative;    
+alternativeDiv.appendChild(checkbox);
+alternativeDiv.appendChild(label);
+alternativesContainer.appendChild(alternativeDiv);
+container.appendChild(alternativesContainer);
+
+function checkout(){
+
 }
-    startQuizButton.addEventListener('click', function() {
-    renderQuiz(QuestionPosition, styleContainerQuestions);
-    divNextBtn.style.display = "flex";
 
-    nextButton.addEventListener('click', function() {
-    QuestionPosition = (QuestionPosition + 1)  
-    renderQuiz(QuestionPosition, styleContainerQuestions);
-    });
+});
+}
 
+startQuizButton.addEventListener('click', function() {
+renderQuiz(QuestionPosition, styleContainerQuestions);
+divNextBtn.style.display = "flex";
+nextButton.addEventListener('click', function() {
+QuestionPosition = (QuestionPosition + 1)  
+renderQuiz(QuestionPosition, styleContainerQuestions); 
 });
 
 
+})
+
+ 
 const questionsAndAnswers = [
 {
 question: "Melhor time do Brasil?",
-altenativa: ["Corinthians", "Sport Club Corinthians"],
+alternativa: ["Corinthians", "Sport Club Corinthians"],
 AnswersCorrect: 1
 },
 
 {
  question: "melhor   time da série b",
- altenativa: ["Vasco da gama", "Vasco"],
+ alternativa: ["Vasco da gama", "Vasco"],
  AnswersCorrect: 0
  },
  {
  question: "A or B",
- altenativa: ["A", "B"],
+ alternativa: ["A", "B"],
  AnswersCorrect: 0
  }
 ]
