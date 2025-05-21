@@ -1,4 +1,3 @@
-
 window.onload = function myPage() {
 const container = document.createElement('div') 
 container.className = "container"
@@ -27,47 +26,59 @@ document.body.appendChild(container);
 divH2Quiz.appendChild(quizH2)
 divNextBtn.appendChild(nextButton)
 container.appendChild(divNextBtn)
-styleContainerQuestions.appendChild(startQuizButton)
+container.appendChild(startQuizButton)
 container.appendChild(styleContainerQuestions)
 
 function renderQuiz(position, container) {
 container.innerHTML = '';
 const questionElement = document.createElement('h2');
 questionElement.textContent = questionsAndAnswers[position].question;
-container.appendChild(questionElement);
+container.appendChild(questionElement); 
 questionElement.className ="questionH2"
 
 const alternativesContainer = document.createElement('div');
 alternativesContainer.className = "alternatives-container";
 questionsAndAnswers[position].alternativa.forEach((alternative) => {
 const alternativeDiv = document.createElement('div');
-alternativeDiv.className = "alternative";
-    
+alternativeDiv.className = "alternativeDiv";
+
 const checkbox = document.createElement('input');
 checkbox.type = "radio"; 
 checkbox.name = "alternative"; 
-const label = document.createElement('label');
-label.textContent = alternative;    
-alternativeDiv.appendChild(checkbox);
-alternativeDiv.appendChild(label);
+checkbox.className = "checkbox"
+const divCheckbox = document.createElement ("div")
+divCheckbox.className = "divCheckbox"
+const labelCheck = document.createElement('label');
+labelCheck.className = "labelCheck"
+labelCheck.textContent = alternative;    
+divCheckbox.appendChild(checkbox)
+divCheckbox.appendChild(labelCheck);
+alternativeDiv.appendChild(divCheckbox);
 alternativesContainer.appendChild(alternativeDiv);
 container.appendChild(alternativesContainer);
 
-function checkout(){
-
-}
-
 });
 }
-
 startQuizButton.addEventListener('click', function() {
 renderQuiz(QuestionPosition, styleContainerQuestions);
 divNextBtn.style.display = "flex";
+this.remove()
 nextButton.addEventListener('click', function() {
 QuestionPosition = (QuestionPosition + 1)  
 renderQuiz(QuestionPosition, styleContainerQuestions); 
 });
 
+function check_state(checkbox) {
+  let val = checkbox.value;
+  if(checkbox.checked)
+  {
+
+  }
+  else
+  {
+
+  }
+}
 
 })
 
