@@ -56,8 +56,25 @@ divCheckbox.appendChild(labelCheck);
 alternativeDiv.appendChild(divCheckbox);
 alternativesContainer.appendChild(alternativeDiv);
 container.appendChild(alternativesContainer);
+checkbox.addEventListener('change', function(){
+ if(this.checked){
+  questionsAndAnswers[position].selecte = alternative
+ }
 
-});
+function checkout (alternative) {
+    let val = alternative.value;
+    if(checkbox.checked) {
+    console.log('')
+}
+else{
+     console.log("vasco da gama")
+}
+
+}
+console.log(alternative)
+} )
+} );
+
 }
 startQuizButton.addEventListener('click', function() {
 renderQuiz(QuestionPosition, styleContainerQuestions);
@@ -68,21 +85,9 @@ QuestionPosition = (QuestionPosition + 1)
 renderQuiz(QuestionPosition, styleContainerQuestions); 
 });
 
-function check_state(checkbox) {
-  let val = checkbox.value;
-  if(checkbox.checked)
-  {
 
-  }
-  else
-  {
-
-  }
-}
 
 })
-
- 
 const questionsAndAnswers = [
 {
 question: "Melhor time do Brasil?",
