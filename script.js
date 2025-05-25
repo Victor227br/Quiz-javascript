@@ -29,19 +29,20 @@ container.appendChild(divNextBtn)
 container.appendChild(startQuizButton)
 container.appendChild(styleContainerQuestions)
 
-function renderQuiz(position, container) {
+function renderQuiz(indice, container) {
 container.innerHTML = '';
 const questionElement = document.createElement('h2');
-questionElement.textContent = questionsAndAnswers[position].question;
+questionElement.textContent = questionsAndAnswers[indice].question;
 container.appendChild(questionElement); 
 questionElement.className ="questionH2"
 
 const alternativesContainer = document.createElement('div');
-alternativesContainer.className = "alternatives-container";
-questionsAndAnswers[position].alternativa.forEach((alternative) => {
+alternativesContainer.className = "alternativesContainer";
+questionsAndAnswers[indice].alternativa.forEach((alternative) => {
 const alternativeDiv = document.createElement('div');
 alternativeDiv.className = "alternativeDiv";
 
+// console.log(alternative)
 const checkbox = document.createElement('input');
 checkbox.type = "radio"; 
 checkbox.name = "alternative"; 
@@ -56,24 +57,25 @@ divCheckbox.appendChild(labelCheck);
 alternativeDiv.appendChild(divCheckbox);
 alternativesContainer.appendChild(alternativeDiv);
 container.appendChild(alternativesContainer);
+
 checkbox.addEventListener('change', function(){
- if(this.checked){
-  questionsAndAnswers[position].selecte = alternative
+    if(this.checked){
+    questionsAndAnswers[indice].selecte = alternative
  }
 
-function checkout (alternative) {
-    let val = alternative.value;
-    if(checkbox.checked) {
-    console.log('')
+
+    if(checkbox.checked ){
+    const verificarResposta = questionsAndAnswers[indice]
+    console.log(verificarResposta, "reposta correta")
 }
 else{
-     console.log("vasco da gama")
+     console.log( "reposta errada")
 }
 
-}
+
 console.log(alternative)
-} )
-} );
+})
+});
 
 }
 startQuizButton.addEventListener('click', function() {
