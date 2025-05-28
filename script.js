@@ -58,13 +58,11 @@ window.onload = function myPage() {
     container.appendChild(alternativesContainer);
     
     checkbox.addEventListener('change', function(){
-    if(this.checked){
+    if(checkbox.checked){
         questionsAndAnswers[index].selecte = alternative
-        nextButton.removeAttribute('disabled');
 } 
 
  if(checkbox.checked ){
-
     const resposta = indexPositionAwerser
     const AsweserCorrect = questionsAndAnswers[index].AnswersCorrect
         if(resposta === AsweserCorrect){
@@ -86,7 +84,7 @@ function final (){
     message.innerHTML = "Quiz Completed"
     message.className =  "quizCompleted"
     const yourScore = ("p")
-    yourScore.innerHTML = "Your Score: "
+    yourScore.innerHTML = `Your Score: ${score} of ${questionsAndAnswers.length}`
     divFinal.appendChild(message)
     divFinal.appendChild(yourScore)
     styleContainerQuestions.appendChild(divFinal)
