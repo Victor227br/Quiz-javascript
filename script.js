@@ -29,28 +29,28 @@ window.onload = function myPage() {
     container.appendChild(startQuizButton)
     container.appendChild(styleContainerQuestions)
 
-    function renderQuiz(indice, container) {
+    function renderQuiz(index, container) {
     container.innerHTML = '';
     const questionElement = document.createElement('h2');
-    questionElement.textContent = questionsAndAnswers[indice].question;
+    questionElement.innerHTML = questionsAndAnswers[index].question;
     container.appendChild(questionElement); 
     questionElement.className ="questionH2"
-    const alternativesContainer = document.createElement('div');
+    let alternativesContainer = document.createElement('div');
     alternativesContainer.className = "alternativesContainer";
-    questionsAndAnswers[indice].alternativa.forEach((alternative, i) => {
-    const alternativeDiv = document.createElement('div');
+    questionsAndAnswers[index].alternativa.forEach((alternative, indexPositionAwerser) => {
+    let alternativeDiv = document.createElement('div');
     alternativeDiv.className = "alternativeDiv";
 
     // console.log(alternative)
-    const checkbox = document.createElement('input');
+    let checkbox = document.createElement('input');
     checkbox.type = "radio"; 
     checkbox.name = "alternative"; 
     checkbox.className = "checkbox"
-    const divCheckbox = document.createElement ("div")
+    let divCheckbox = document.createElement ("div")
     divCheckbox.className = "divCheckbox"
-    const labelCheck = document.createElement('label');
+    let labelCheck = document.createElement('label');
     labelCheck.className = "labelCheck"
-    labelCheck.textContent = alternative;    
+    labelCheck.innerHTML = alternative;    
     divCheckbox.appendChild(checkbox)
     divCheckbox.appendChild(labelCheck);
     alternativeDiv.appendChild(divCheckbox);
@@ -58,38 +58,58 @@ window.onload = function myPage() {
     container.appendChild(alternativesContainer);
     
     checkbox.addEventListener('change', function(){
-        if(this.checked){
-        questionsAndAnswers[indice].selecte = alternative
-}
-if(checkbox.checked ){
-    // const verificarResposta = questionsAndAnswers[indice]
-    // console.log(verificarResposta)
-    const resposta = i
-    console.log(i + " i want coffee")
+    if(this.checked){
+        questionsAndAnswers[index].selecte = alternative
+        nextButton.removeAttribute('disabled');
+} 
 
-    const respostaCorreta = questionsAndAnswers[indice].AnswersCorrect
-        if(resposta === respostaCorreta){
+ if(checkbox.checked ){
+
+    const resposta = indexPositionAwerser
+    const AsweserCorrect = questionsAndAnswers[index].AnswersCorrect
+        if(resposta === AsweserCorrect){
         console.log("acertouuuu")
         score ++
 } 
 }    
     console.log(score + "pontos")
-    console.log(alternative + "alternativeClick")
-    console.log(indice + "indice")
+    // console.log(alternative + "alternativeClick")
+    // console.log(index + "index")
 })
 });
 }
+
+function final (){
+    styleContainerQuestions = " "
+    const divFinal = document.createElement ("div")
+    const message = document.createElement ("h2")
+    message.innerHTML = "Quiz Completed"
+    message.className =  "quizCompleted"
+    const yourScore = ("p")
+    yourScore.innerHTML = "Your Score: "
+    divFinal.appendChild(message)
+    divFinal.appendChild(yourScore)
+    styleContainerQuestions.appendChild(divFinal)
+    }
+
     startQuizButton.addEventListener('click', function() {
     renderQuiz(QuestionPosition, styleContainerQuestions);
     divNextBtn.style.display = "flex";
     this.remove()
     nextButton.addEventListener('click', function() {
-    QuestionPosition = (QuestionPosition + 1)  
-    renderQuiz(QuestionPosition, styleContainerQuestions);  
+         QuestionPosition = (QuestionPosition + 1)  
+
+    if (QuestionPosition < questionsAndAnswers.length) {
+    renderQuiz(QuestionPosition, styleContainerQuestions);
+    nextButton.setAttribute('disabled', 'disabled'); 
+} else {
+    final(); 
+    divNextBtn.style.display = 'none';
+}  
 
 });
 })
-    
+
 const questionsAndAnswers = [
 {
     question: "Melhor time do Brasil?",
