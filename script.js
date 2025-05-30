@@ -17,10 +17,10 @@ window.onload = function myPage() {
     let divNextBtn = document.createElement('div')
     divNextBtn.className = "divNextBtn"
     divNextBtn.style.display = "none"
-    
+
     let QuestionPosition = 0
     let score = 0
-    
+     
     document.body.appendChild(divH2Quiz)
     document.body.appendChild(container);
     divH2Quiz.appendChild(quizH2)
@@ -31,7 +31,7 @@ window.onload = function myPage() {
 
     function renderQuiz(index, container) {
     container.innerHTML = '';
-    const questionElement = document.createElement('h2');
+    let questionElement = document.createElement('h2');
     questionElement.innerHTML = questionsAndAnswers[index].question;
     container.appendChild(questionElement); 
     questionElement.className ="questionH2"
@@ -60,6 +60,7 @@ window.onload = function myPage() {
     checkbox.addEventListener('change', function(){
     if(checkbox.checked){
         questionsAndAnswers[index].selecte = alternative
+        nextButton.removeAttribute('disabled');
 } 
 
  if(checkbox.checked ){
@@ -76,7 +77,6 @@ window.onload = function myPage() {
 })
 });
 }
-
 function final (){
     styleContainerQuestions = " "
     const divFinal = document.createElement ("div")
@@ -95,14 +95,15 @@ function final (){
     divNextBtn.style.display = "flex";
     this.remove()
     nextButton.addEventListener('click', function() {
-         QuestionPosition = (QuestionPosition + 1)  
+        //  QuestionPosition = (QuestionPosition + 1)  
+        QuestionPosition ++
 
     if (QuestionPosition < questionsAndAnswers.length) {
     renderQuiz(QuestionPosition, styleContainerQuestions);
-    nextButton.setAttribute('disabled', 'disabled'); 
 } else {
-    final(); 
+    styleContainerQuestions = " "
     divNextBtn.style.display = 'none';
+    final(); 
 }  
 
 });
