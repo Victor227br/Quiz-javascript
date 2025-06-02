@@ -21,11 +21,10 @@ body{
 
 .styleContainerQuestions{
     width: 52vw;
-    height: 24vw;
+    height: 20vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* align-items: ; */
+    justify-content: space-around;
 }
 
 .divH2{
@@ -38,7 +37,6 @@ body{
     background-color: #9932cc;
     border-radius: 5px;
 }
-
 .quizH2{
     color: white;
     font: bold;
@@ -50,6 +48,7 @@ body{
     width: 10vw;
     height: 30px;
     border-radius: 5px;
+    margin-bottom: 10px;
     background-color:#9932cc;
     border: 0000;
     color: white;
@@ -71,38 +70,125 @@ body{
 
 .questionH2{
     color: white; 
+    font-size: 3 0px;
 }
-/* .alternativeDiv input{
-    display: none;
-}
- 
-.alternativeDiv input + label::before{
-    content: '';
-    border-radius: 3px;
-    background-color: #484C69;
-    border: 2px solid white;
-    padding-right: 15px;
-    vertical-align:middle;
-    cursor: pointer;
-    size: 20px;
-}
-
-.alternativeDiv input:checked + label::before{
-    background-color: rgb(27, 180, 103);
-    background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 10 10'%3E%3Cg class='nc-icon-wrapper' stroke-width='1' fill='%23555555'%3E%3Cpath fill='none' stroke='%23FFFFFF' stroke-linecap='round' stroke-linejoin='round' stroke-miterlimit='10' data-cap='butt' d='M2.83 4.72l1.58 1.58 2.83-2.83'/%3E%3C/g%3E%3C/svg%3E");
-    position: center;
-} */
 
 .divCheckbox{  
-    padding-right: 15px ;
-    margin: 2vw;
+    margin-bottom: 30px;
+    display: flex;
     background-color: #484C69;
 }
+
 .checkbox{
-    size: 50px;
+    size: 70px;
     background-color:#484C69; 
 }
 
 .labelCheck {
     color: white;
+    font-size: 20px;
+}
+
+.divFinal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+}
+
+.quizCompleted{
+    font-size: 35px;
+    color: #2b2d42;
+}
+
+.scoreStyle{
+    font-size: 25px;
+    color: #2b2d42;
+}
+
+.divButtonReload{
+    margin-top: 14px;
+}
+
+.buttonReload{
+    color: white;
+    width: 9vw;
+    height: 25px;
+    background-color: #9932cc;
+    border:  0000;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+
+.divH2{
+    width: 60vw;
+    height: 16vw;
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+}
+
+.quizH2{
+    font-size: 8vw;
+}
+
+.container{
+width: 90vw;
+height: 105vw;
+}
+
+.styleContainerQuestions{
+    width: 75vw;
+    height: 85vw;
+}
+
+.btnStart{
+    font-size: 5vw;
+    width: 44vw;
+    height: 14vw;
+}
+
+.divNextBtn{
+    align-items: center;
+}
+.nextButton{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 30vw;
+    height: 8vw;
+    font-size: 6vw ;
+}
+
+.questionH2{
+    font-size: 30px;
+}
+
+.checkbox{
+    size: 120px;
+}
+
+.labelCheck {
+    color: white;
+    font-size: 24px;
+}
+
+.buttonReload{
+    color: white;
+    width: 30vw;
+    height: 10vw;
+    background-color: #9932cc;
+    border:  0000;
+    border-radius: 5px;
+}
+
+.quizCompleted{
+    font-size: 38px;    
+}
+
+.scoreStyle{
+    font-size: 29px;
+}
+
 }
