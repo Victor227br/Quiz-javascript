@@ -21,9 +21,10 @@ body{
 
 .styleContainerQuestions{
     width: 52vw;
-    height: 20vw;
+    height: 24vw;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-around;
 }
 
@@ -70,24 +71,22 @@ body{
 
 .questionH2{
     color: white; 
-    font-size: 3 0px;
+    font-size: 25px;
 }
 
-.divCheckbox{  
-    margin-bottom: 30px;
-    display: flex;
-    background-color: #484C69;
-}
 
-.checkbox{
-    size: 70px;
-    background-color:#484C69; 
-}
-
-.labelCheck {
+.alternativeButton {
+    background-color: #9932cc;
     color: white;
-    font-size: 20px;
+    border-radius: 5px;
+    border: 0000;
+    width: 50vw;
+    height: 3vw;
+    margin: 7px;
+    font-size: 24px;
+    cursor: pointer;
 }
+
 
 .divFinal{
     display: flex;
@@ -163,15 +162,6 @@ height: 105vw;
 
 .questionH2{
     font-size: 30px;
-}
-
-.checkbox{
-    size: 120px;
-}
-
-.labelCheck {
-    color: white;
-    font-size: 24px;
 }
 
 .buttonReload{
