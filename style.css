@@ -19,6 +19,7 @@ body{
     border-radius: 4px;
     background-color: #2a2a2a;
     width: 55vw;
+    border: 1px solid white;
     height: 25vw;
 }
 
@@ -39,7 +40,7 @@ body{
     height: 6vw;
     margin-top: 8vw;
     background-color:  #2a2a2a;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 5px;
 }
 .quizH2{
@@ -75,12 +76,12 @@ body{
 
 .alternativesContainer{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     background-color: #e8e8e8ee;
     border-radius: 5px;
-    height: 10vw;
+    height: 12vw;
 }
 
 
