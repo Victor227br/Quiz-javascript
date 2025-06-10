@@ -27,7 +27,10 @@ window.onload = function myPage() {
     const questionElement = document.createElement('h2');
     questionElement.innerHTML = question.question;
     questionElement.className = "questionH2";
-    container.appendChild(questionElement);
+    const questionContainer = document.createElement('div')
+    questionContainer.className = "questionContainer"
+    questionContainer.appendChild(questionElement)
+    container.appendChild(questionContainer);
 
     let alternativesContainer = document.createElement('div');
     alternativesContainer.className = "alternativesContainer";
@@ -70,7 +73,7 @@ container.appendChild(alternativesContainer);
     buttonReload.innerHTML = "Recomeçar";
     buttonReload.addEventListener('click', function () {
         location.reload();
-        });
+    });
 
         divButtonReload.appendChild(buttonReload);
         divFinal.appendChild(message);
@@ -84,41 +87,61 @@ container.appendChild(alternativesContainer);
         this.remove();
     });
 
-  const questionsAndAnswers = [
-        {
-            question: "Aonde surgiu o café?",
-            alternativa: ["Brasil", "Arábia"],
-            AnswersCorrect: 1
-        },
-        {
-            question: "Qual país é o maior produtor de café?",
-            alternativa: ["Brasil", "Colômbia"],
-            AnswersCorrect: 0
-        },
-        {
-            question: "Qual é a substância estimulante encontrada no café?",
-            alternativa: ["Teína", "Cafeína"],
-            AnswersCorrect: 1
-        },
-        {
-            question: "Qual é o método de preparo de café mais comum?",
-            alternativa: ["Espresso", "Filtro de papel"],
-            AnswersCorrect: 1
-        },
-        {
-            question: "Qual é o processo de retirada dos grãos de café da cereja?",
-            alternativa: ["Torra", "Descascamento"],
-            AnswersCorrect: 1
-        },
-        {
-            question: "Qual é a palavra utilizada para descrever o aroma do café moído e recém-preparado?",
-            alternativa: ["Fragrância", "Aroma"],
-            AnswersCorrect: 1
-        },
-        {
-            question: "Qual é a bebida que mistura café espresso com uma pequena quantidade de leite vaporizado?",
-            alternativa: ["Cappuccino", "Macchiato"],
-            AnswersCorrect: 1
-        }
-    ];
-};
+    const questionsAndAnswers = [
+  {
+    question: "Qual tipo de dado representa um valor verdadeiro ou falso em JavaScript?",
+    alternativa: ["Boolean", "String"],
+    AnswersCorrect: 0
+  },
+  {
+    question: "Como você chama uma função nomeada `minhaFuncao`?",
+    alternativa: ["call(minhaFuncao)", "minhaFuncao()"],
+    AnswersCorrect: 1
+  },
+  
+  {
+    question: "Qual método de array executa uma função para cada elemento do array?",
+    alternativa: [".map()", ".push()"],
+    AnswersCorrect: 0
+  },
+  {
+    question: "Qual método remove o último item de um array?",
+    alternativa: [".shift()", ".pop()"],
+    AnswersCorrect: 1
+  },
+   {
+    question: "Qual é o escopo de variáveis declaradas com var dentro de uma função?",
+    alternativa: ["Escopo de bloco", "Escopo de função"],
+    AnswersCorrect: 1
+  },
+
+    {
+    question: "Qual evento é disparado quando a página termina de carregar?",
+    alternativa: ["onload", "onclick"],
+    AnswersCorrect: 0
+  },
+
+  {
+    question: "Como declarar uma constante em JavaScript?",
+    alternativa: ["const valor = 10", "let valor = 10"],
+    AnswersCorrect: 0
+  },
+  {
+    question: "Qual palavra-chave retorna um valor de dentro de uma função?",
+    alternativa: ["break", "return"],
+    AnswersCorrect: 1
+  },
+  {
+    question: "Qual método de string remove espaços do início e fim de uma string?",
+    alternativa: ["trim()", "slice()"],
+    AnswersCorrect: 0
+  },
+  {
+    question: "Qual estrutura de repetição percorre diretamente os valores de um array?",
+    alternativa: ["for…in", "for…of"],
+    AnswersCorrect: 1
+  },
+
+];
+
+}

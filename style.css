@@ -1,11 +1,14 @@
 body{
-    background-color: #2b2d42;
+    background: linear-gradient(135deg, #6C63FF, #3A3A58);   
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
+    font-family: 'IBM Plex Sans', sans-serif;
+        min-height: 100vh;
 }
+
 
 .container{
     display: flex;
@@ -13,10 +16,10 @@ body{
     flex-direction: column-reverse;
     align-items: center;
     margin-top:2vw;
-    background-color: #484c69;
+    border-radius: 4px;
+    background-color: #2a2a2a;
     width: 55vw;
     height: 25vw;
-    border: 3px solid #9932cc;
 }
 
 .styleContainerQuestions{
@@ -32,10 +35,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 31vw;
-    height: 5vw;
+    width: 55vw;
+    height: 6vw;
     margin-top: 8vw;
-    background-color: #9932cc;
+    background-color:  #2a2a2a;
+    border: 2px solid white;
     border-radius: 5px;
 }
 .quizH2{
@@ -46,42 +50,48 @@ body{
 }
 
 .btnStart{
-    width: 10vw;
-    height: 30px;
+    width: 20vw;
+    height: 10vw;
     border-radius: 5px;
-    margin-bottom: 10px;
-    background-color:#9932cc;
+    margin-bottom: 10vw;
+    background-color:#e8e8e8ee;
     border: 0000;
-    color: white;
+    color:#242424;
+    font-size: 32px;
 }
 
-.divNextBtn{
-    justify-content: flex-end;
+
+.questionContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #242424;
+    background-color: #e8e8e8ee;
+    font-size: 16px;
+    height: 5vw;
+    width: 50vw;
+    border-radius: 5px;
 }
 
-.nextButton{
-    background-color:#9932cc;
-    color: white;
-    width: 8vw;
-    height: 25px;
-    border: 0000;
-    border-radius: 4px;
-    margin-bottom: 12px;
-}
-
-.questionH2{
-    color: white; 
-    font-size: 25px;
+.alternativesContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e8e8e8ee;
+    border-radius: 5px;
+    height: 10vw;
 }
 
 
 .alternativeButton {
-    background-color: #9932cc;
+    background-color: #242424;
     color: white;
+    gap: 10px;
     border-radius: 5px;
     border: 0000;
     width: 50vw;
-    height: 3vw;
+    height: 4vw;
     margin: 7px;
     font-size: 24px;
     cursor: pointer;
@@ -98,12 +108,12 @@ body{
 
 .quizCompleted{
     font-size: 35px;
-    color: #2b2d42;
+    color:#e8e8e8ee;
 }
 
 .scoreStyle{
     font-size: 25px;
-    color: #2b2d42;
+    color:#e8e8e8ee;
 }
 
 .divButtonReload{
@@ -111,12 +121,13 @@ body{
 }
 
 .buttonReload{
-    color: white;
-    width: 9vw;
-    height: 25px;
-    background-color: #9932cc;
-    border:  0000;
+     width: 12vw;
+    height: 3vw;
     border-radius: 5px;
+    background-color:#e8e8e8ee;
+    border: 0000;
+    color:#242424;
+    font-size: 22px;
 }
 
 @media (max-width: 768px) {
@@ -151,26 +162,19 @@ height: 105vw;
 .divNextBtn{
     align-items: center;
 }
-.nextButton{
-    display: flex;
-    align-self: center;
-    justify-content: center;
-    width: 30vw;
-    height: 8vw;
-    font-size: 6vw ;
-}
 
 .questionH2{
     font-size: 30px;
 }
 
 .buttonReload{
-    color: white;
-    width: 30vw;
-    height: 10vw;
-    background-color: #9932cc;
-    border:  0000;
+     width: 10vw;
+    height: 5vw;
     border-radius: 5px;
+    background-color:#e8e8e8ee;
+    border: 0000;
+    color:#242424;
+    font-size: 24px;
 }
 
 .quizCompleted{
