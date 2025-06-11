@@ -132,58 +132,73 @@ body{
 }
 
 @media (max-width: 768px) {
-
-.divH2{
-    width: 60vw;
-    height: 16vw;
-    margin-top: 30vw;
-    margin-bottom: 15vw;
+    
+.container {
+    width: 90vw;
+    height: auto;
+    padding: 4vw 2vw;
+    flex-direction: column-reverse;
 }
 
-.quizH2{
+.styleContainerQuestions {
+    width: 90vw;
+    height: 130vw;
+}
+
+.divH2 {
+    width: 90vw;
+    height: auto;
+    margin-top: 12vw;
+    padding: 4vw 2vw;
+}
+
+.quizH2 {
     font-size: 8vw;
+    text-align: center;
 }
 
-.container{
-width: 90vw;
-height: 105vw;
-}
-
-.styleContainerQuestions{
-    width: 75vw;
-    height: 85vw;
-}
-
-.btnStart{
-    font-size: 5vw;
-    width: 44vw;
+.btnStart {
+    width: 60vw;
     height: 14vw;
+    font-size: 7vw;
+    margin-bottom: 10vw;
 }
 
-.divNextBtn{
-    align-items: center;
+
+.questionContainer {
+    width: 80vw;
+    height: auto;
+    font-size: 5vw;
+    padding: 1vw;
+    font-size: 20px;
+    text-align: center;
 }
 
-.questionH2{
-    font-size: 30px;
+.alternativesContainer {
+    width: 85vw;
+    height: 40vw;
+    padding: 3vw 0;
 }
 
-.buttonReload{
-     width: 10vw;
-    height: 5vw;
-    border-radius: 5px;
-    background-color:#e8e8e8ee;
-    border: 0000;
-    color:#242424;
-    font-size: 24px;
+.alternativeButton {
+    width: 80vw;
+    height: 20vw;
+    font-size: 7vw;
+    
 }
 
-.quizCompleted{
-    font-size: 38px;    
-}
+.quizCompleted {
+    font-size: 12vw;
+    text-align: center;
+    }
 
-.scoreStyle{
-    font-size: 29px;
-}
+.scoreStyle {
+    font-size: 8vw;
+    }
 
+.buttonReload {
+    width: 45vw;
+    height: 14vw;
+    font-size: 5vw;
+    }
 }
